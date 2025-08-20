@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYA Studio - Narratives. Growth. Experience.</title>
+    <meta name="description" content="AYA Studio is a multidisciplinary company operating in three strategic areas: audiovisual production, business growth consulting, and corporate events. Specialized in Web3 narratives and authentic storytelling.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ayastudio.xyz/">
+    <meta property="og:title" content="AYA Studio - Narratives. Growth. Experience.">
+    <meta property="og:description" content="AYA Studio is a multidisciplinary company operating in three strategic areas: audiovisual production, business growth consulting, and corporate events. Specialized in Web3 narratives and authentic storytelling.">
+    <meta property="og:image" content="https://ayastudio.xyz/og-image.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ayastudio.xyz/">
+    <meta property="twitter:title" content="AYA Studio - Narratives. Growth. Experience.">
+    <meta property="twitter:description" content="AYA Studio is a multidisciplinary company operating in three strategic areas: audiovisual production, business growth consulting, and corporate events. Specialized in Web3 narratives and authentic storytelling.">
+    <meta property="twitter:image" content="https://ayastudio.xyz/og-image.png">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "AYA Studio",
+      "description": "Multidisciplinary company specializing in Web3 narratives, growth consulting, and corporate events",
+      "url": "https://ayastudio.xyz",
+      "logo": "https://ayastudio.xyz/logo.png",
+      "sameAs": [
+        "https://www.instagram.com/ayastudio.lfg"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "ayastudio.lfg@gmail.com",
+        "contactType": "business"
+      }
+    }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white text-black">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="flex items-center justify-between py-4">
+                <!-- Mobile: Language + Hamburger -->
+                <div class="md:hidden flex items-center justify-between w-full">
+                    <!-- Language Toggle -->
+                    <div class="flex items-center bg-gray-100 rounded-full p-1">
+                        <button onclick="setLanguage('en')" class="language-btn px-3 py-1 rounded-full text-sm font-medium transition-all" data-lang="en">
+                            EN
+                        </button>
+                        <button onclick="setLanguage('pt')" class="language-btn px-3 py-1 rounded-full text-sm font-medium transition-all" data-lang="pt">
+                            PT
+                        </button>
+                    </div>
+                    
+                    <!-- Hamburger Menu Button -->
+                    <button onclick="toggleMobileMenu()" class="hamburger-btn p-2">
+                        <svg class="lucide w-6" viewBox="0 0 24 24">
+                            <path d="M3 12h18M3 6h18M3 18h18"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Desktop Header -->
+                <div class="hidden md:flex items-center justify-between w-full">
+                    <!-- Logo -->
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center mr-3">
+                            <span class="text-white font-semibold text-sm">A</span>
+                        </div>
+                        <span class="font-semibold text-xl">AYA</span>
+                    </div>
+
+                    <!-- Desktop Navigation -->
+                    <nav class="flex items-center space-x-8">
+                        <a href="#home" class="hover:text-orange-500 transition-all nav-link" data-en="Home" data-pt="Início">Home</a>
+                        <a href="#about" class="hover:text-orange-500 transition-all nav-link" data-en="Values" data-pt="Valores">Values</a>
+                        <a href="#services" class="hover:text-orange-500 transition-all nav-link" data-en="Services" data-pt="Serviços">Services</a>
+                        <a href="#portfolio" class="hover:text-orange-500 transition-all nav-link" data-en="Portfolio" data-pt="Portfólio">Portfolio</a>
+                        <a href="#team" class="hover:text-orange-500 transition-all nav-link" data-en="Team" data-pt="Equipe">Team</a>
+                        <a href="#contact" class="hover:text-orange-500 transition-all nav-link" data-en="Contact" data-pt="Contato">Contact</a>
+                    </nav>
+
+                    <!-- Language Toggle -->
+                    <div class="flex items-center bg-gray-100 rounded-full p-1">
+                        <button onclick="setLanguage('en')" class="language-btn px-3 py-1 rounded-full text-sm font-medium transition-all" data-lang="en">
+                            EN
+                        </button>
+                        <button onclick="setLanguage('pt')" class="language-btn px-3 py-1 rounded-full text-sm font-medium transition-all" data-lang="pt">
+                            PT
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Dropdown -->
+            <div class="mobile-menu absolute top-full left-0 right-0 bg-white border-b border-gray-200 md:hidden">
+                <div class="py-4 px-4">
+                    <!-- Logo in Mobile Menu -->
+                    <div class="flex items-center mb-6">
+                        <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center mr-3">
+                            <span class="text-white font-semibold text-sm">A</span>
+                        </div>
+                        <span class="font-semibold text-xl">AYA</span>
+                    </div>
+                    
+                    <!-- Mobile Navigation -->
+                    <nav class="flex flex-col space-y-4">
+                        <a href="#home" onclick="closeMobileMenu()" class="py-2 hover:text-orange-500 transition-all nav-link" data-en="Home" data-pt="Início">Home</a>
+                        <a href="#about" onclick="closeMobileMenu()" class="py-2 hover:text-orange-500 transition-all nav-link" data-en="Values" data-pt="Valores">Values</a>
+                        <a href="#services" onclick="closeMobileMenu()" class="py-2 hover:text-orange-500 transition-all nav-link" data-en="Services" data-pt="Serviços">Services</a>
+                        <a href="#portfolio" onclick="closeMobileMenu()" class="py-2 hover:text-orange-500 transition-all nav-link" data-en="Portfolio" data-pt="Portfólio">Portfolio</a>
+                        <a href="#team" onclick="closeMobileMenu()" class="py-2 hover:text-orange-500 transition-all nav-link" data-en="Team" data-pt="Equipe">Team</a>
+                        <a href="#contact" onclick="closeMobileMenu()" class="py-2 hover:text-orange-500 transition-all nav-link" data-en="Contact" data-pt="Contato">Contact</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-white text-black py-20 md:py-32 min-h-screen flex items-center">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center">
+                    <h1 class="text-5xl md:text-7xl font-light text-black mb-8 tracking-tight hero-title" data-en="Narratives. Growth. Experience." data-pt="Narrativas. Crescimento. Experiência.">
+                        Narratives. Growth. Experience.
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed hero-subtitle" 
+                       data-en="We create compelling stories, drive sustainable growth, and deliver unforgettable experiences in the Web3 ecosystem."
+                       data-pt="Criamos histórias envolventes, impulsionamos crescimento sustentável e entregamos experiências inesquecíveis no ecossistema Web3.">
+                        We create compelling stories, drive sustainable growth, and deliver unforgettable experiences in the Web3 ecosystem.
+                    </p>
+                    <div class="hero-description"
+                         data-en="AYA is a multidisciplinary company that operates in three strategic areas: audiovisual production (AYA Films), business growth consulting (AYA Growth), and corporate events (AYA Events). We understand that strategic brand recognition in Web3 is essential to avoid financial waste and maximize impact. Each brand deserves unique thinking and specialized strategies for success in the decentralized world."
+                         data-pt="AYA é uma empresa multidisciplinar que atua em três áreas estratégicas: produção audiovisual (AYA Films), consultoria de crescimento empresarial (AYA Growth) e eventos corporativos (AYA Events). Compreendemos que o reconhecimento estratégico de marca na Web3 é essencial para evitar desperdício financeiro e maximizar o impacto. Cada marca merece pensamento único e estratégias especializadas para o sucesso no mundo descentralizado.">
+                        <p class="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
+                            AYA is a multidisciplinary company that operates in three strategic areas: audiovisual production (AYA Films), business growth consulting (AYA Growth), and corporate events (AYA Events). We understand that strategic brand recognition in Web3 is essential to avoid financial waste and maximize impact. Each brand deserves unique thinking and specialized strategies for success in the decentralized world.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section id="about" class="py-32 bg-aya-off-white">
+        <div class="container mx-auto px-8">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-20">
+                    <h2 class="text-5xl md:text-6xl font-light text-black mb-8 tracking-tight values-title" data-en="Values" data-pt="Valores">Values</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed values-subtitle"
+                       data-en="Each project serves a greater purpose, contributing to sustainable growth in the decentralized world through focused execution."
+                       data-pt="Cada projeto serve a um propósito maior, contribuindo para o crescimento sustentável no mundo descentralizado através de execução focada.">
+                        Each project serves a greater purpose, contributing to sustainable growth in the decentralized world through focused execution.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <!-- Strategic Focus -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="lucide w-8 text-white" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"/>
+                                <circle cx="12" cy="12" r="6"/>
+                                <circle cx="12" cy="12" r="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-medium mb-4 value-title-1" data-en="Strategic Focus" data-pt="Foco Estratégico">Strategic Focus</h3>
+                        <p class="text-gray-600 leading-relaxed value-desc-1"
+                           data-en="Every decision is guided by strategic thinking, ensuring resources are invested where they generate the greatest impact for long-term success."
+                           data-pt="Cada decisão é guiada pelo pensamento estratégico, garantindo que os recursos sejam investidos onde geram o maior impacto para o sucesso de longo prazo.">
+                            Every decision is guided by strategic thinking, ensuring resources are invested where they generate the greatest impact for long-term success.
+                        </p>
+                    </div>
+                    
+                    <!-- Authentic Storytelling -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="lucide w-8 text-white" viewBox="0 0 24 24">
+                                <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+                                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                                <path d="M2 2l7.586 7.586"/>
+                                <circle cx="11" cy="11" r="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-medium mb-4 value-title-2" data-en="Authentic Storytelling" data-pt="Narrativas Autênticas">Authentic Storytelling</h3>
+                        <p class="text-gray-600 leading-relaxed value-desc-2"
+                           data-en="We believe in the power of genuine narratives that resonate with audiences, creating meaningful connections between brands and communities."
+                           data-pt="Acreditamos no poder de narrativas genuínas que ressoam com audiências, criando conexões significativas entre marcas e comunidades.">
+                            We believe in the power of genuine narratives that resonate with audiences, creating meaningful connections between brands and communities.
+                        </p>
+                    </div>
+                    
+                    <!-- Innovation Drive -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="lucide w-8 text-white" viewBox="0 0 24 24">
+                                <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-medium mb-4 value-title-3" data-en="Innovation Drive" data-pt="Impulso à Inovação">Innovation Drive</h3>
+                        <p class="text-gray-600 leading-relaxed value-desc-3"
+                           data-en="We embrace emerging technologies and creative approaches to deliver solutions that position our clients at the forefront of their industries."
+                           data-pt="Abraçamos tecnologias emergentes e abordagens criativas para entregar soluções que posicionam nossos clientes na vanguarda de suas indústrias.">
+                            We embrace emerging technologies and creative approaches to deliver solutions that position our clients at the forefront of their industries.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-32 bg-white">
+        <div class="container mx-auto px-8">
+            <div class="text-center mb-24">
+                <h2 class="text-5xl md:text-6xl font-light text-black mb-8 tracking-tight services-title" data-en="Services" data-pt="Serviços">Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed services-subtitle"
+                   data-en="Three specialized divisions working in synergy to deliver comprehensive solutions for Web3 brands and communities."
+                   data-pt="Três divisões especializadas trabalhando em sinergia para entregar soluções abrangentes para marcas e comunidades da Web3.">
+                    Three specialized divisions working in synergy to deliver comprehensive solutions for Web3 brands and communities.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <!-- AYA Films -->
+                <div class="bg-blue-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-black rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-semibold">A</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-black">AYA Films</h3>
+                            <p class="text-gray-600 films-subtitle" data-en="Audiovisual Production" data-pt="Produção Audiovisual">Audiovisual Production</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <svg class="lucide w-5 mr-2 text-black" viewBox="0 0 24 24">
+                                    <rect width="18" height="18" x="3" y="3" rx="2"/>
+                                    <path d="M7 3v18"/>
+                                    <path d="M3 7.5h4"/>
+                                    <path d="M3 12h18"/>
+                                    <path d="M3 16.5h4"/>
+                                    <path d="M21 7.5h-4"/>
+                                    <path d="M21 16.5h-4"/>
+                                </svg>
+                                <h4 class="font-medium films-service-1" data-en="Documentary Production" data-pt="Produção de Documentários">Documentary Production</h4>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <svg class="lucide w-5 mr-2 text-black" viewBox="0 0 24 24">
+                                    <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+                                    <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                                    <path d="M2 2l7.586 7.586"/>
+                                    <circle cx="11" cy="11" r="2"/>
+                                </svg>
+                                <h4 class="font-medium films-service-2" data-en="Brand Storytelling" data-pt="Narrativas de Marca">Brand Storytelling</h4>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <svg class="lucide w-5 mr-2 text-black" viewBox="0 0 24 24">
+                                    <rect width="20" height="16" x="2" y="4" rx="2"/>
+                                    <path d="M6 8h4"/>
+                                    <path d="M6 12h8"/>
+                                    <path d="M16 8h2"/>
+                                </svg>
+                                <h4 class="font-medium films-service-3" data-en="Corporate Videos" data-pt="Vídeos Corporativos">Corporate Videos</h4>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <svg class="lucide w-5 mr-2 text-black" viewBox="0 0 24 24">
+                                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                                </svg>
+                                <h4 class="font-medium films-service-4" data-en="Content Strategy" data-pt="Estratégia de Conteúdo">Content Strategy</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AYA Growth -->
+                <div class="bg-orange-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-black rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-semibold">A</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-black">AYA Growth</h3>
+                            <p class="text-gray-600 growth-subtitle" data-en="Business Consulting" data-pt="Consultoria Empresarial">Business Consulting</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <svg class="lucide w-5 mr-2 text-black" viewBox="0 0 24 24">
+                                    <path d="M3 3v18h18"/>
+                                    <path d="M7 12l3 3 7-10"/>
+                                </svg>
+                                <h4 class="font-medium growth-service-1" data-en="Growth Strategy" data-pt="Estratégia de Crescimento">Growth Strategy</h4>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <svg class="lucide w-5 mr-2 text-black" viewBox="0 0 24 24">
+                                    <path d="M3 3v18h18"/>
+                                    <path d="m19 9-5 5-4-4-3 3"/>
+                                </svg>
+                                <h4 class="font-medium growth-service-2" data-en="Market Analysis" data-pt="Análise de Mercado">Market Analysis</h4>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <svg class="lucide w-5 mr-2 text-black" viewBox="0 0 24 24">
+                                    <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+                                    <line x1="16" x2="16" y1="2" y2="6"/>
+                                    <line x1="8" x2="8" y1="2" y2="6"/>
+                                    <line x1="3" x2="21" y1="10" y2="10"/>
+                                    <path d="M8 14h.01"/>
+                                    <path d="M12 14h.01"/>
+                                    <path d="M16 14h.01"/>
+                                    <path d="M8 18h.01"/>
+                                    <path d="M12 18h.01"/>
+                                    <path d="M16 18h.01"/>
+                                </svg>
+                                <h4 class="font-medium growth-service-3" data-en="Business Development" data-pt="Desenvolvimento de Negócios">Business Development</h4>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <svg class="lucide w-5 mr-2 text-black" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                                    <path d="M12 17h.01"/>
+                                </svg>
+                                <h4 class="font-medium growth-service-4" data-en="Stablecoin Implementation" data-pt="Implementação de Stablecoins">Stablecoin Implementation</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AYA Events -->
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-black rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-semibold">A</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-black">AYA Events</h3>
+                            <p class="text-gray-600 events-subtitle" data-en="Corporate Events" data-pt="Eventos Corporativos">Corporate Events</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <svg class="lucide w-5 mr-2 text-black" viewBox="0 0 24 24">
+                                    <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+                                    <line x1="16" x2="16" y1="2" y2="6"/>
+                                    <line x1="8" x2="8" y1="2" y2="6"/>
+                                    <line x1="3" x2="21" y1="10" y2="10"/>
+                                </svg>
+                                <h4 class="font-medium events-service-1" data-en="Event Planning" data-pt="Planejamento de Eventos">Event Planning</h4>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <svg class="lucide w-5 mr-2 text-black" viewBox="0 0 24 24">
+                                    <polygon points="5,3 19,12 5,21 5,3"/>
+                                </svg>
+                                <h4 class="font-medium events-service-2" data-en="Event Production" data-pt="Produção de Eventos">Event Production</h4>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <svg class="lucide w-5 mr-2 text-black" viewBox="0 0 24 24">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                                <h4 class="font-medium events-service-3" data-en="Web3 Meetups" data-pt="Meetups Web3">Web3 Meetups</h4>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <svg class="lucide w-5 mr-2 text-black" viewBox="0 0 24 24">
+                                    <path d="M7 7h10v6H7z"/>
+                                    <path d="M17 7l-5 5-5-5"/>
+                                </svg>
+                                <h4 class="font-medium events-service-4" data-en="Event Marketing" data-pt="Marketing de Eventos">Event Marketing</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-32 bg-aya-off-white">
+        <div class="container mx-auto px-8">
+            <div class="text-center mb-24">
+                <h2 class="text-5xl md:text-6xl font-light text-black mb-8 tracking-tight portfolio-title" data-en="Portfolio" data-pt="Portfólio">Portfolio</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed portfolio-subtitle"
+                   data-en="Success stories across our three divisions, showcasing our expertise in Web3 narratives and strategic growth."
+                   data-pt="Histórias de sucesso em nossas três divisões, demonstrando nossa expertise em narrativas Web3 e crescimento estratégico.">
+                    Success stories across our three divisions, showcasing our expertise in Web3 narratives and strategic growth.
+                </p>
+            </div>
+
+            <!-- High-Quality Media Content -->
+            <div class="mb-20">
+                <h3 class="text-3xl font-medium text-center mb-12 media-title" data-en="High-Quality Media Content" data-pt="Conteúdo de Mídia de Alta Qualidade">High-Quality Media Content</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Production Images -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h4 class="text-xl font-medium mb-4 production-title" data-en="Production Showcase" data-pt="Mostra de Produção">Production Showcase</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded">
+                                <span class="text-sm font-medium">Professional Setup</span>
+                                <a href="https://www.instagram.com/p/C8oHovJOQzF/" target="_blank" class="text-orange-500 hover:text-orange-600 text-sm">View →</a>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded">
+                                <span class="text-sm font-medium">Behind the Scenes</span>
+                                <a href="https://www.instagram.com/p/C8oHovJOQzF/" target="_blank" class="text-orange-500 hover:text-orange-600 text-sm">View →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video Samples -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h4 class="text-xl font-medium mb-4 video-title" data-en="Video Samples" data-pt="Amostras de Vídeo">Video Samples</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded">
+                                <span class="text-sm font-medium">Documentary Style</span>
+                                <a href="https://www.instagram.com/reel/C8oKOHEuivR/" target="_blank" class="text-orange-500 hover:text-orange-600 text-sm">Watch →</a>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded">
+                                <span class="text-sm font-medium">Interview Format</span>
+                                <a href="https://www.instagram.com/reel/C8oKOHEuivR/" target="_blank" class="text-orange-500 hover:text-orange-600 text-sm">Watch →</a>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded">
+                                <span class="text-sm font-medium">Narrative Content</span>
+                                <a href="https://www.instagram.com/reel/C8oKOHEuivR/" target="_blank" class="text-orange-500 hover:text-orange-600 text-sm">Watch →</a>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded">
+                                <span class="text-sm font-medium">Creative Storytelling</span>
+                                <a href="https://www.instagram.com/reel/C8oKOHEuivR/" target="_blank" class="text-orange-500 hover:text-orange-600 text-sm">Watch →</a>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded">
+                                <span class="text-sm font-medium">Brand Integration</span>
+                                <a href="https://www.instagram.com/reel/C8oKOHEuivR/" target="_blank" class="text-orange-500 hover:text-orange-600 text-sm">Watch →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Studies -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <!-- AYA Films Case -->
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center mr-3">
+                            <span class="text-white font-semibold text-sm">A</span>
+                        </div>
+                        <span class="font-semibold text-lg">AYA Films</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 films-case-title" data-en="Sunny Documentary Series" data-pt="Série Documental Sunny">Sunny Documentary Series</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed films-case-desc"
+                       data-en="Comprehensive documentary production capturing authentic stories across multiple locations, showcasing our expertise in narrative-driven content creation."
+                       data-pt="Produção documental abrangente capturando histórias autênticas em múltiplas localizações, demonstrando nossa expertise na criação de conteúdo narrativo.">
+                        Comprehensive documentary production capturing authentic stories across multiple locations, showcasing our expertise in narrative-driven content creation.
+                    </p>
+                    <div class="border-t pt-4">
+                        <p class="text-sm font-medium mb-2 case-deliverables" data-en="Key Deliverables:" data-pt="Principais Entregas:">Key Deliverables:</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• <span class="films-deliverable-1" data-en="Sunny in California documentary" data-pt="Documentário Sunny na Califórnia">Sunny in California documentary</span></li>
+                            <li>• <span class="films-deliverable-2" data-en="Sunny in Nicaragua documentary" data-pt="Documentário Sunny na Nicarágua">Sunny in Nicaragua documentary</span></li>
+                            <li>• <span class="films-deliverable-3" data-en="Multi-location production coordination" data-pt="Coordenação de produção multi-locação">Multi-location production coordination</span></li>
+                            <li>• <span class="films-deliverable-4" data-en="Post-production and editing" data-pt="Pós-produção e edição">Post-production and editing</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- AYA Growth Case -->
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center mr-3">
+                            <span class="text-white font-semibold text-sm">A</span>
+                        </div>
+                        <span class="font-semibold text-lg">AYA Growth</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 growth-case-title" data-en="Ribus Key Growth Strategy" data-pt="Estratégia de Crescimento Ribus Key">Ribus Key Growth Strategy</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed growth-case-desc"
+                       data-en="Strategic consulting and content development for emerging Web3 project, demonstrating our ability to drive growth through targeted digital strategies."
+                       data-pt="Consultoria estratégica e desenvolvimento de conteúdo para projeto Web3 emergente, demonstrando nossa capacidade de impulsionar crescimento através de estratégias digitais direcionadas.">
+                        Strategic consulting and content development for emerging Web3 project, demonstrating our ability to drive growth through targeted digital strategies.
+                    </p>
+                    <div class="border-t pt-4">
+                        <p class="text-sm font-medium mb-2 case-deliverables" data-en="Key Deliverables:" data-pt="Principais Entregas:">Key Deliverables:</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• <a href="https://www.instagram.com/reel/C8mN_1tOwXY/" target="_blank" class="text-orange-500 hover:text-orange-600 growth-deliverable-1" data-en="Strategic market positioning" data-pt="Posicionamento estratégico de mercado">Strategic market positioning →</a></li>
+                            <li>• <a href="https://www.instagram.com/reel/C8mMrMHOBPk/" target="_blank" class="text-orange-500 hover:text-orange-600 growth-deliverable-2" data-en="Content creation and distribution" data-pt="Criação e distribuição de conteúdo">Content creation and distribution →</a></li>
+                            <li>• <a href="https://www.instagram.com/reel/C8mL4VnunFE/" target="_blank" class="text-orange-500 hover:text-orange-600 growth-deliverable-3" data-en="Community engagement strategy" data-pt="Estratégia de engajamento da comunidade">Community engagement strategy →</a></li>
+                            <li>• <a href="https://www.instagram.com/reel/C8mKOTKO9zc/" target="_blank" class="text-orange-500 hover:text-orange-600 growth-deliverable-4" data-en="Brand development framework" data-pt="Framework de desenvolvimento de marca">Brand development framework →</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- AYA Events Case -->
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center mr-3">
+                            <span class="text-white font-semibold text-sm">A</span>
+                        </div>
+                        <span class="font-semibold text-lg">AYA Events</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 events-case-title" data-en="Corporate Web3 Summit" data-pt="Summit Corporativo Web3">Corporate Web3 Summit</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed events-case-desc"
+                       data-en="End-to-end event management for premier Web3 gathering, showcasing our expertise in creating meaningful connections within the decentralized ecosystem."
+                       data-pt="Gestão de eventos de ponta a ponta para encontro premier Web3, demonstrando nossa expertise em criar conexões significativas dentro do ecossistema descentralizado.">
+                        End-to-end event management for premier Web3 gathering, showcasing our expertise in creating meaningful connections within the decentralized ecosystem.
+                    </p>
+                    <div class="border-t pt-4">
+                        <p class="text-sm font-medium mb-2 case-deliverables" data-en="Key Deliverables:" data-pt="Principais Entregas:">Key Deliverables:</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• <span class="events-deliverable-1" data-en="Venue selection and coordination" data-pt="Seleção e coordenação de local">Venue selection and coordination</span></li>
+                            <li>• <span class="events-deliverable-2" data-en="Speaker and sponsor management" data-pt="Gestão de palestrantes e patrocinadores">Speaker and sponsor management</span></li>
+                            <li>• <span class="events-deliverable-3" data-en="Marketing and promotion strategy" data-pt="Estratégia de marketing e promoção">Marketing and promotion strategy</span></li>
+                            <li>• <span class="events-deliverable-4" data-en="Live event production and coverage" data-pt="Produção e cobertura de evento ao vivo">Live event production and coverage</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-32 bg-white">
+        <div class="container mx-auto px-8">
+            <div class="text-center mb-24">
+                <h2 class="text-5xl md:text-6xl font-light text-black mb-8 tracking-tight team-title" data-en="Team" data-pt="Equipe">Team</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed team-subtitle"
+                   data-en="A multidisciplinary team bringing together expertise from Web3, audiovisual production, and strategic consulting."
+                   data-pt="Uma equipe multidisciplinar que reúne expertise em Web3, produção audiovisual e consultoria estratégica.">
+                    A multidisciplinary team bringing together expertise from Web3, audiovisual production, and strategic consulting.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Richard Lucien Dayan -->
+                <div class="bg-aya-off-white p-8 rounded-xl text-center">
+                    <div class="w-24 h-24 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-white text-2xl font-semibold">RD</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Richard Lucien Dayan</h3>
+                    <p class="text-orange-500 font-medium mb-4 richard-role" data-en="Founder & Creative Director" data-pt="Fundador e Diretor Criativo">Founder & Creative Director</p>
+                    <p class="text-gray-600 leading-relaxed richard-desc"
+                       data-en="Web3 Business Developer with expertise in project management and growth strategies. Specialized in stablecoin implementation and DAO governance, Richard brings deep knowledge of decentralized finance and blockchain technologies to drive sustainable growth for Web3 projects."
+                       data-pt="Desenvolvedor de Negócios Web3 com expertise em gestão de projetos e estratégias de crescimento. Especializado em implementação de stablecoins e governança de DAOs, Richard traz conhecimento profundo em finanças descentralizadas e tecnologias blockchain para impulsionar crescimento sustentável para projetos Web3.">
+                        Web3 Business Developer with expertise in project management and growth strategies. Specialized in stablecoin implementation and DAO governance, Richard brings deep knowledge of decentralized finance and blockchain technologies to drive sustainable growth for Web3 projects.
+                    </p>
+                </div>
+
+                <!-- Samira Chalom -->
+                <div class="bg-aya-off-white p-8 rounded-xl text-center">
+                    <div class="w-24 h-24 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-white text-2xl font-semibold">SC</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Samira Chalom</h3>
+                    <p class="text-orange-500 font-medium mb-4 samira-role" data-en="Strategic Consultant & Sustainability Specialist" data-pt="Consultora Estratégica e Especialista em Sustentabilidade">Strategic Consultant & Sustainability Specialist</p>
+                    <p class="text-gray-600 leading-relaxed samira-desc"
+                       data-en="MBA student in Economics and Sustainability with extensive experience in strategic consulting and sustainable business development. Samira focuses on creating long-term value through sustainable practices and innovative economic models, bridging traditional business with emerging Web3 opportunities."
+                       data-pt="Estudante de MBA em Economia e Sustentabilidade com vasta experiência em consultoria estratégica e desenvolvimento de negócios sustentáveis. Samira foca na criação de valor de longo prazo através de práticas sustentáveis e modelos econômicos inovadores, conectando negócios tradicionais com oportunidades emergentes da Web3.">
+                        MBA student in Economics and Sustainability with extensive experience in strategic consulting and sustainable business development. Samira focuses on creating long-term value through sustainable practices and innovative economic models, bridging traditional business with emerging Web3 opportunities.
+                    </p>
+                </div>
+
+                <!-- Growth Position (Open) -->
+                <div class="bg-gray-100 p-8 rounded-xl text-center border-2 border-dashed border-gray-300">
+                    <div class="w-24 h-24 bg-gray-300 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="lucide w-8 text-gray-500" viewBox="0 0 24 24">
+                            <path d="M12 5v14m7-7H5"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-medium mb-2 text-gray-600 open-position-title" data-en="We're Growing" data-pt="Estamos Crescendo">We're Growing</h3>
+                    <p class="text-gray-500 font-medium mb-4 open-position-subtitle" data-en="Join Our Team" data-pt="Junte-se à Nossa Equipe">Join Our Team</p>
+                    <p class="text-gray-500 leading-relaxed open-position-desc"
+                       data-en="We're always looking for talented individuals who share our vision for Web3 innovation and authentic storytelling. If you're passionate about creating meaningful impact in the decentralized ecosystem, we'd love to hear from you."
+                       data-pt="Estamos sempre procurando por indivíduos talentosos que compartilham nossa visão para inovação Web3 e narrativas autênticas. Se você é apaixonado por criar impacto significativo no ecossistema descentralizado, gostaríamos de ouvir de você.">
+                        We're always looking for talented individuals who share our vision for Web3 innovation and authentic storytelling. If you're passionate about creating meaningful impact in the decentralized ecosystem, we'd love to hear from you.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 bg-aya-off-white">
+        <div class="container mx-auto px-8">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-5xl md:text-6xl font-light text-black mb-8 tracking-tight contact-title" data-en="Contact" data-pt="Contato">Contact</h2>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <p class="text-2xl text-gray-700 mb-8 contact-ready"
+                       data-en="Ready to create something extraordinary together?"
+                       data-pt="Pronto para criar algo extraordinário juntos?">
+                        Ready to create something extraordinary together?
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <p class="text-lg font-medium text-gray-600 mb-2 contact-email-label" data-en="Email us:" data-pt="Nos envie um e-mail:">Email us:</p>
+                            <a href="mailto:ayastudio.lfg@gmail.com" class="text-xl text-orange-500 hover:text-orange-600 font-medium">
+                                ayastudio.lfg@gmail.com
+                            </a>
+                        </div>
+                        
+                        <div>
+                            <p class="text-lg font-medium text-gray-600 mb-2 contact-location-label" data-en="Location:" data-pt="Localização:">Location:</p>
+                            <p class="text-lg text-gray-700 contact-location" data-en="Brazil" data-pt="Brasil">Brazil</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-16">
+        <div class="container mx-auto px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center mb-6">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-4">
+                        <span class="text-black font-semibold text-lg">A</span>
+                    </div>
+                    <span class="text-2xl font-semibold">AYA</span>
+                </div>
+                <p class="text-gray-400 mb-8 footer-tagline"
+                   data-en="Narratives. Growth. Experience."
+                   data-pt="Narrativas. Crescimento. Experiência.">
+                    Narratives. Growth. Experience.
+                </p>
+                <p class="text-gray-500 text-sm footer-copyright">
+                    &copy; 2025 AYA Studio. <span class="footer-rights" data-en="All rights reserved." data-pt="Todos os direitos reservados.">All rights reserved.</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>
